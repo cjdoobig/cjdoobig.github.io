@@ -13,14 +13,12 @@ $(document).ready(function(){
         $.ajax({
             url: 'https://formspree.io/xoqkljkl',
             method: 'POST',
-            headers: {
-                "Acceept" : "application/json"
-            },
             data:{
                 name: $('#fsfName').val(),
                 _replyto: $('#fsfEmail').val(),
                 message: $('#fsfMessage').val()
-            }
+            },
+            dataType: "json"
         })
         .done(function(data){
             $('#fsfAlert').removeClass('hidden').addClass('alert-success')
